@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Laurette Bibliothèque </h1>
+
+<p>Bienvenue dans ma Bibliothèque !!!</p>
+
+
+
+<div>
+{% load static %}
+<img src="{% static "images/original.jpg" %}" alt="My image" style="width:555px;height:540px;"/>
+</div>  
+
+
+<h2>Contenue Dynamique </h2>
+
+<p>The library has the following record counts:</p>
+<ul>
+<li><strong>Livres:</strong> {{ num_books }}</li>
+<li><strong>Copies:</strong> {{ num_instances }}</li>
+<li><strong>Copies Disponible:</strong> {{ num_instances_available }}</li>
+<li><strong>Auteurs:</strong> {{ num_authors }}</li>
+</ul>
+
+
+<p>Vous avez visité(e) cette page {{ num_visits }} foi{{ num_visits|pluralize }}.</p>
+
+{% endblock %}
